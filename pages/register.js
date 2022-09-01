@@ -20,8 +20,6 @@ const Login = () => {
     }
 
     const _register = async () => {
-        console.log('email : ',email)
-        console.log('password : ',password)
         let data = {
             username : userName,
             email : email,
@@ -30,7 +28,6 @@ const Login = () => {
 
         try {
             const response = await RegisterAPI.PostRegister(data)
-            console.log('response register: ',response.status)
             if(response.status == 200) {
                 router.push('/login')
             }

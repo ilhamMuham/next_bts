@@ -15,8 +15,6 @@ const Login = () => {
     }
 
     const _login = async () => {
-        console.log('userName : ',userName)
-        console.log('password : ',password)
         let data = {
             username : userName,
             password : password
@@ -24,7 +22,6 @@ const Login = () => {
 
         try {
             const response = await LoginAPI.PostLogin(data)
-            console.log('response login: ',response)
             if(response.status == 200) {
                 localStorage.setItem("user_info",JSON.stringify(response.data.data))
                 router.push('/list')
